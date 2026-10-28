@@ -8,14 +8,14 @@ Unity demonstrator of an automated industrial fire monitor: fire detection, pan/
 
 **SIMULATION / LIVE STATE** shows supply pressure, valve command and actual state, flow, encoder angles, motor currents, limit contacts and the selected zone. Current is expressed as a multiple of nominal current (**×In**), not amperes; the two-decimal encoder readings expose simulated measurement noise.
 
-![Simulation panel with live telemetry](docs/media/d00-simulation.png)
+![Simulation panel with live telemetry](https://github.com/user-attachments/assets/ad7e9e0b-4dac-4dad-9e6b-bf26ad8661c6)
 
 **EVENT LOG** offers **DETAILED** scan events and **SIMPLIFIED** milestones, newest first. A nominal cycle records detection/aim command → monitor reached the zone → actual water discharge → extinction/valve-close command. Both histories run while the tab is closed and are cleared by Restart. Reached confirms angular alignment, not water impact.
 
 <details>
 <summary>View the simplified event log</summary>
 
-![Simplified log showing faults, recovery, aiming and discharge](docs/media/d00-logs.png)
+![Simplified log showing faults, recovery, aiming and discharge](https://github.com/user-attachments/assets/6a3ed37f-9ef5-4cbd-803a-e34cb53c7419)
 
 </details>
 
@@ -27,8 +27,7 @@ These descriptions follow the recorded operator actions. Durations are the compl
 
 Ignite **A** and let the monitor aim, open the valve and extinguish it; repeat with **C**. The recording then shows LIVE STATE, followed by the detailed and simplified logs. Each discharge starts after alignment and ends when the fire clears.
 
-<!-- PUBLIC_VIDEO_D01 -->
-*Video upload pending.*
+https://github.com/user-attachments/assets/e2064e5f-0058-4702-9cd6-9fb81baacf1a
 
 ### D02 — Low pressure, emergency suppression and recovery · 1:34
 
@@ -36,8 +35,7 @@ Set supply pressure to **1 bar**: H001 is diagnosed before any fire. Ignite **A*
 
 Ignite **A and B**: the detection change rearms automatic emergency protection. While emergency suppression is still reducing both fires, raise pressure to **4 bar**. After pressure recovery, the monitor serves **A, then B**. Water and emergency suppression contribute together while both are active. Stop emergency suppression manually and review the simplified log.
 
-<!-- PUBLIC_VIDEO_D02 -->
-*Video upload pending.*
+https://github.com/user-attachments/assets/2244a49f-15ee-47d2-b3d8-3eb199d27260
 
 ### D03 — Fire sensor, stalled pan motor and stuck valve · 1:25
 
@@ -45,8 +43,7 @@ Briefly inject **Sensor A failed**: the alarm appears, but removing it before th
 
 Ignite **A and B** to rearm the emergency response, then remove the pan stall. The motor recovers and the monitor aims at A, but the jammed valve cannot open. Only after a permitted OPEN command remains unfulfilled does the **VALVE timeout** confirm that second fault. Remove the valve injection: water starts, A is extinguished, the valve closes for retargeting, and the monitor serves B. Finally, stop emergency suppression and show the simplified log.
 
-<!-- PUBLIC_VIDEO_D03 -->
-*Video upload pending.*
+https://github.com/user-attachments/assets/44e15b64-0384-4d22-9352-b484b4fe5662
 
 ### D04 — Frozen pan encoder and motor power loss · 1:11
 
@@ -54,8 +51,7 @@ Inject **Pan encoder frozen** and ignite **A**. The mechanism moves with normal 
 
 Next, inject **Pan motor power lost** and ignite **C**. Movement is commanded, but current remains zero and the encoder does not progress. The **no-current diagnostic** confirms a motor fault and emergency suppression activates. Restore power: normal current confirms recovery, the monitor reaches C and discharges. Stop emergency suppression shortly before water completes extinction, then review the simplified log.
 
-<!-- PUBLIC_VIDEO_D04 -->
-*Video upload pending.*
+https://github.com/user-attachments/assets/a173c7f6-fdd3-424e-adaf-c8a78d3df2db
 
 ## Diagnostic and control rules
 
@@ -99,8 +95,12 @@ Here P is pressure in Pa, ρ density in kg/m³, Av/An valve/nozzle areas in m²,
 
 ## Implementation and further work
 
-Open with **Unity 6000.3.25f1 / URP 17.3.0**, load `Assets/Project/Scenes/FireMonitorDemo.unity` and enter Play, or run a Windows build with that scene first. Apply numeric fields with Enter or focus loss. **Restart** reloads the saved starting configuration and clears both logs; **×** closes the executable or exits Play in the Editor.
+Built with **Unity 6000.3.25f1 / URP 17.3.0**. The recordings show the Windows application. **Restart** reloads its saved starting configuration and clears both logs; **×** closes the application.
 
 Next steps: calibrate current/contact diagnostics, model motor acceleration and supply dynamics, expand sensor/reachability supervision, and export persistent logs. Further checks include interrupted-water regrowth and operator overrides; the recordings demonstrate behavior rather than formal engineering validation.
 
-Visual assets: Free Fire VFX URP and ANGRY MESH Snowman particles. Simulation code: `Assets/Project/Scripts`.
+Visual assets: Free Fire VFX URP and ANGRY MESH Snowman particles.
+
+## Full project access
+
+The complete Unity project, including source code, is maintained in a private repository. **Access is available upon request.**
