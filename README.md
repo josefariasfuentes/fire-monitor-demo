@@ -4,6 +4,15 @@ Unity demonstrator of an automated industrial fire monitor: fire detection, pan/
 
 **Public demonstration only:** the Unity project and source code are maintained privately. This repository contains the project overview, screenshots and demonstration videos.
 
+## Industrial Automation Relevance
+
+This demonstrator illustrates transferable concepts in industrial automation, including cyclic control logic, operating permissives, safety interlocks, actuator feedback, fault diagnostics, HMI monitoring and event logging.
+
+By combining a simulated plant with its control logic, it enables repeatable fault injection, testing of abnormal operating conditions and evaluation of control strategies before physical implementation. Such an approach can support virtual commissioning, troubleshooting, maintenance planning and system upgrades, reducing reliance on physical trial-and-error.
+
+The architecture could be extended to more complex industrial processes and integrated with real PLC hardware for software- or hardware-in-the-loop testing. These are potential extensions, not capabilities implemented or validated in the current demonstrator.
+
+
 ## Operator panel
 
 **SIMULATION / LIVE STATE** shows supply pressure, valve command and actual state, flow, encoder angles, motor currents, limit contacts and the selected zone. Current is expressed as a multiple of nominal current (**×In**), not amperes; the two-decimal encoder readings expose simulated measurement noise.
